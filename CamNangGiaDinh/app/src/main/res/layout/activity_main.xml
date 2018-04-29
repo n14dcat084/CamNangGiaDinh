@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="btl.com.noitro.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="btl.com.noitro.MainActivity"
+        android:background="@mipmap/anhnen4">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imgmeovat"
+            android:layout_marginTop="80dp"
+            android:src="@mipmap/meovat_icon" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/imgnauan"
+            android:layout_alignTop="@+id/imgmeovat"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/monngon_icon" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/imgmondochai"
+            android:layout_below="@+id/imgmeovat"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="58dp"
+            android:src="@mipmap/dochai_icon" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/imgdaycon"
+            android:layout_alignTop="@+id/imgmondochai"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/daycon_img" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Mẹo vặt"
+            android:textSize="25sp"
+            android:id="@+id/txtmeovat"
+            android:layout_below="@+id/imgmeovat"
+            android:layout_above="@+id/imgdaycon"
+            android:textColor="#f50303"
+
+            android:gravity="center"
+            android:textStyle="bold"
+            android:theme="@style/AlertDialog.AppCompat.Light"
+            android:transitionName="@string/abc_searchview_description_query"
+            android:textIsSelectable="false"
+            android:layout_alignRight="@+id/imgmondochai"
+            android:layout_alignEnd="@+id/imgmondochai"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Thực phẩm độc hại"
+            android:id="@+id/txtdochai"
+            android:gravity="center"
+            android:layout_below="@+id/imgmondochai"
+            android:layout_alignRight="@+id/imgmondochai"
+            android:layout_alignEnd="@+id/imgmondochai"
+            android:textColor="#f50303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Món ăn ngon"
+            android:gravity="center"
+            android:id="@+id/txtnauan"
+            android:textColor="#f50303"
+            android:textStyle="bold"
+            android:layout_above="@+id/imgdaycon"
+            android:layout_alignLeft="@+id/imgdaycon"
+            android:layout_alignStart="@+id/imgdaycon"
+            android:layout_alignRight="@+id/imgnauan"
+            android:layout_alignEnd="@+id/imgnauan"
+            android:layout_alignTop="@+id/txtmeovat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Dạy con"
+            android:id="@+id/txtdaycon"
+            android:layout_alignBottom="@+id/txtdochai"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/imgdaycon"
+            android:layout_alignLeft="@+id/imgdaycon"
+            android:layout_alignStart="@+id/imgdaycon"
+            android:gravity="center"
+            android:textColor="#f50303"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

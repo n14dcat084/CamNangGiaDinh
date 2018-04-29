@@ -1,0 +1,29 @@
+<resources>
+
+    <string name="app_name">Cẩm nang gia đình
+    </string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="meovat">Mẹo vặt gia đình</string>
+    <string name="daycon">Dạy con</string>
+    <string name="nauanngon">Nấu ăn ngon</string>
+    <string name="monxao">Món xào</string>
+    <string name="moncanh">Món canh</string>
+    <string name="monchien">Món chiên</string>
+    <string name="monnuong">Món nướng</string>
+    <string name="monkho">Món kho</string>
+    <string name="monnom">Món nộm</string>
+    <string name="dochai">Thực phẩm độc hại</string>
+
+
+    <string name="action_thongtin">Thông Tin</string>
+    <string name="action_thoat">Thoát</string>
+    <string name="Search">Tìm Kiếm</string>
+
+    <string name="title_activity_webviewmonnom">webviewmonnom</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

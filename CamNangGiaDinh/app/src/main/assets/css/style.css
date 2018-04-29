@@ -1,0 +1,56 @@
+
+
+
+
+p {	
+	text-align: justify;
+	font-size:18px;
+	padding: 5px;
+	 margin:0px 0px 15px 0px;
+	
+	
+}
+
+ul{
+text-align: justify;
+	font-size:18px;
+	padding: 5px;
+	 margin:0px 0px 15px 0px;
+}
+li{
+text-align: justify;
+	font-size:18px;
+	padding: 5px;
+	 margin:0px 0px 15px 0px;
+}
+
+
+/* HEADINGS
+**************************************************/
+h1, h2, h3, h4, h5, h6 {
+	color:#454545;
+	text-align: center;
+	
+	padding:0 0 10px 0;
+	font-family:'Montserrat';
+	font-weight:700;
+}
+h1 { font-size: 1.6em; line-height: 33px; }
+h2 { font-size: 1.6em; line-height: 33px; }
+h3 { font-size: 1.6em; line-height: 33px; }
+h4 { font-size: 1.4em; line-height: 29px; }
+h5 { font-size: 1.2em; line-height: 27px; }
+h6 { font-size: 1.3em; 
+line-height: 25px;
+ background-color: pink;
+ padding: 5px 5px;
+ margin:0px 0px 15px 0px;
+ border : 1px solid red;
+    border-radius: 5px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow:0px 0px 10px  #343434;}
+
+
+
+

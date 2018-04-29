@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="btl.com.noitro.monxao.ActivityMonXao">
+    <LinearLayout
+        android:weightSum="10"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="abc"
+                android:layout_margin="5dp"
+                android:layout_gravity="left|center_vertical"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:id="@+id/tvTieudeXao"
+                android:textSize="30dp"
+                android:textColor="#000000"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="0dp">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_margin="5dp"
+
+                android:layout_gravity="center"
+                android:id="@+id/imChiTietXao"
+                android:scaleType="fitXY"
+                android:layout_height="300sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="6"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="6"
+                android:inputType="textMultiLine"
+                android:scrollbarStyle="insideInset"
+                android:shadowColor="#f5f1f1"
+
+                android:text="abc"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:gravity="top|left"
+                android:id="@+id/tvChitietXao"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

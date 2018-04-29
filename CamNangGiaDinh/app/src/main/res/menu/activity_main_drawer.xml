@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_meovat"
+            android:title="Mẹo vặt gia đình"
+            />
+        <item
+            android:id="@+id/nav_monan"
+            android:title="Món ăn ngon" />
+        <item
+            android:id="@+id/nav_dochai"
+            android:title="Thực phẩm độc hại" />
+        <item
+            android:id="@+id/nav_daycon"
+            android:title="Dạy con" />
+    </group>
+
+    <item android:title="Thông tin">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Chia sẻ" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_info_black_24px"
+                android:title="Thông tin" />
+            <item
+                android:id="@+id/nav_star"
+                android:icon="@drawable/ic_star_black_24dp"
+                android:title="Đánh giá ứng dụng" />
+        </menu>
+    </item>
+
+</menu>

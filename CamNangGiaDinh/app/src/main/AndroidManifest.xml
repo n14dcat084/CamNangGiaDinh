@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="btl.com.noitro">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/iconchinh"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".fodermeovatgiadinh.meovat"
+            android:label="@string/meovat" />
+        <activity
+            android:name=".fodermeovatgiadinh.meovatgiadinh"
+            android:label="@string/meovat" />
+        <activity
+            android:name=".fodermonandochai.monandochai"
+            android:label="Thực phẩm độc hại" />
+        <activity
+            android:name=".fodermonandochai.webviewmonandochai"
+            android:label="Thực phẩm độc hại" />
+        <activity
+            android:name=".foderdaycon.daycon"
+            android:label="Dạy con" />
+        <activity
+            android:name=".foderdaycon.webviebdaycon"
+            android:label="Dạy con" />
+        <activity
+            android:name=".moncanh.lvmoncanh"
+            android:label="Món canh" />
+        <activity
+            android:name=".moncanh.webviewmoncanh"
+            android:label="Món canh" />
+        <activity
+            android:name=".monchien.lvmonchien"
+            android:label="Món chiên" />
+        <activity
+            android:name=".monchien.webviewmonchien"
+            android:label="Món chiên" />
+        <activity
+            android:name=".monkho.lvmonkho"
+            android:label="Món kho" />
+        <activity
+            android:name=".monkho.webviewmonkho"
+            android:label="Món kho" />
+        <activity
+            android:name=".monnuong.lvmonnuong"
+            android:label="Món nướng" />
+        <activity
+            android:name=".monnuong.webviewmonnuong"
+            android:label="Món nướng" />
+        <activity
+            android:name=".monxao.lvmonxao"
+            android:label="Món xào" />
+        <activity
+            android:name=".monxao.webviewmonxao"
+            android:label="Món xào" />
+        <activity
+            android:name=".monnom.lvmonnom"
+            android:label="Món nộm" />
+        <activity
+            android:name=".monnom.webviewmonnom"
+            android:label="Món nộm" />
+        <activity
+            android:name=".danhsachmon"
+            android:label="Nấu ăn ngon" />
+        <activity android:name=".Database" />
+        <activity android:name=".fodermeovatgiadinh.meovatAdapter" />
+        <activity android:name=".fodermeovatgiadinh.Activity_MeoVat" />
+        <activity android:name=".moncanh.Activity_MonCanh" />
+        <activity android:name=".monchien.Activity_MonChien" />
+        <activity android:name=".monkho.ActivityMonKho" />
+        <activity android:name=".monnom.ActivityMonNom" />
+        <activity android:name=".monnuong.ActivityMonNuong" />
+        <activity android:name=".monxao.ActivityMonXao"></activity>
+    </application>
+
+</manifest>
