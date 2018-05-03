@@ -12,24 +12,18 @@
         android:orientation="vertical"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_gravity="center_vertical"
-            android:layout_height="0dp">
-
-            <RatingBar
-
-                android:layout_width="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:numStars="1"
-                android:id="@+id/love"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
             android:layout_weight="2"
             android:layout_width="wrap_content"
+            android:orientation="vertical"
             android:layout_height="0dp">
+
+            <Button
+                android:id="@+id/btnLove"
+                android:layout_width="25dp"
+                android:layout_gravity="center"
+                android:layout_height="45dp"
+                android:textAlignment="gravity"
+                android:background="@drawable/love" />
             <TextView
                 android:layout_width="wrap_content"
                 android:text="abc"

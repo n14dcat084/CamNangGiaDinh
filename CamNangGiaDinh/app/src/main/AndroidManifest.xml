@@ -87,7 +87,9 @@
         <activity android:name=".monkho.ActivityMonKho" />
         <activity android:name=".monnom.ActivityMonNom" />
         <activity android:name=".monnuong.ActivityMonNuong" />
-        <activity android:name=".monxao.ActivityMonXao"></activity>
+        <activity android:name=".monxao.ActivityMonXao" />
+        <activity android:name=".LoveActivity" />
+        <activity android:name=".foderdaycon.ActivityDayCon"></activity>
     </application>
 
 </manifest>
