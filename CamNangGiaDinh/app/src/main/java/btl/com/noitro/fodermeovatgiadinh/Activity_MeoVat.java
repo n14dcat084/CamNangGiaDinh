@@ -18,16 +18,15 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import DoiTuong.Food;
 import DoiTuong.MeoVat;
 import btl.com.noitro.CheckConnection;
+import btl.com.noitro.Database;
 import btl.com.noitro.R;
-import btl.com.noitro.ultil.ArrLove;
 
 public class Activity_MeoVat extends AppCompatActivity {
-    public String DATABASE_NAME = "camnanggiadinh.db";
+    public String DATABASE_NAME = "camnanggiadinh1.db";
 
-    ArrLove arrLove;
+    btl.com.noitro.Databases.Database db;
     TextView tv, tv1;
     ImageView im;
     Button love;
@@ -44,18 +43,7 @@ public class Activity_MeoVat extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         Action();
-        //btnLoveClick();
 
-    }
-
-    private void btnLoveClick() {
-        love.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(Activity_MeoVat.this, "Đã thêm vào mục yêu thích", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void AnhXa()
@@ -72,36 +60,39 @@ public class Activity_MeoVat extends AppCompatActivity {
 
     public void Action()
     {
-        arrLove = new ArrLove();
-        final ArrayList<MeoVat> arr = new ArrayList<>();
+
+        db = new btl.com.noitro.Databases.Database(this);
         Intent intent = getIntent();
         String id = intent.getStringExtra("value");
-        int x = Integer.parseInt(id);
+        final int x = Integer.parseInt(id);
         SQLiteDatabase database = CheckConnection.initDatabase(this, DATABASE_NAME);
 
         Cursor cs = database.rawQuery("SELECT * FROM meovat where id = "+(x+1),null);
         cs.moveToFirst();//de truyen vao du lieu, vi khi tao ra thi se khong co truyen vao bat cu
         //du lieu nao, nen phai moveto first
-        String tieude = cs.getString(1);
-
-        byte[] ima = cs.getBlob(2);
-        String chitiet = cs.getString(3);
+        final String tieude = cs.getString(1);
+        final byte[] ima = cs.getBlob(2);
+        final String chitiet = cs.getString(3);
         tv.setText(tieude);
         tv1.setText(chitiet);
         Bitmap bm = BitmapFactory.decodeByteArray(ima, 0, ima.length);
         im.setImageBitmap(bm);
-        MeoVat mv = new MeoVat(x, tieude,ima,chitiet );
-        arr.add(mv);
         love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean re = db.addData(tieude, ima, chitiet);
+                if(re == false)
+                {
+                    Toast.makeText(Activity_MeoVat.this, "Thêm không thành công, vì đã có trong mục ưa thích", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(Activity_MeoVat.this, "Đã thêm vào mục ưa thích", Toast.LENGTH_SHORT).show();
 
-                arrLove.setArr(arr);
-                Toast.makeText(Activity_MeoVat.this, "Đã thêm vào mục yêu thích", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
-
-
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

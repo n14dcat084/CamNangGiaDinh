@@ -89,7 +89,10 @@
         <activity android:name=".monnuong.ActivityMonNuong" />
         <activity android:name=".monxao.ActivityMonXao" />
         <activity android:name=".LoveActivity" />
-        <activity android:name=".foderdaycon.ActivityDayCon"></activity>
+        <activity android:name=".foderdaycon.ActivityDayCon" />
+        <activity android:name=".Databases.LoveMeoVat" />
+        <activity android:name=".Databases.ActivityLoveMeoVat" />
+        <activity android:name=".fodermonandochai.ActivityDocHai"></activity>
     </application>
 
 </manifest>

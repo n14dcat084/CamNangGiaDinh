@@ -13,19 +13,37 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_weight="2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+
             android:layout_height="0dp">
+            <Button
+                android:id="@+id/btnLoveDC"
+                android:gravity="center"
+
+                android:layout_width="25dp"
+                android:layout_gravity="center"
+                android:layout_height="45dp"
+                android:textAlignment="gravity"
+                android:background="@drawable/love" />
             <TextView
                 android:layout_width="wrap_content"
-                android:text="abc"
-                android:layout_margin="5dp"
-                android:layout_gravity="left|center_vertical"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:id="@+id/tvTieudeDC"
-                android:textSize="30dp"
-                android:textColor="#000000"
+                android:text="Thêm vào mục yêu thích"
+                android:gravity="center"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvTieudeDC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center_vertical"
+                android:layout_margin="5dp"
+                android:text="abc"
+                android:textAllCaps="true"
+                android:textColor="#000000"
+                android:textSize="30dp"
+                android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
             android:layout_weight="2"

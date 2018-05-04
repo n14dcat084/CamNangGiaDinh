@@ -32,7 +32,7 @@ public class meovat extends AppCompatActivity implements SearchView.OnQueryTextL
     private ListView l;
     private ShareActionProvider myShareActionProvider;
 
-    final String DATABASE_NAME = "camnanggiadinh.db";
+    final String DATABASE_NAME = "camnanggiadinh1.db";
     ArrayList<MeoVat>  arrayListMeovat;
     SQLiteDatabase database;
     MeoVatAdapter adapter;

@@ -11,18 +11,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import btl.com.noitro.CheckConnection;
+import btl.com.noitro.Databases.Database;
 import btl.com.noitro.R;
 import btl.com.noitro.danhsachmon;
+import btl.com.noitro.monchien.Activity_MonChien;
 
 public class ActivityMonKho extends AppCompatActivity {
 
     TextView tv, tv1;
     ImageView image;
+    Button love;
     public String DATABASE_NAME = "camnanggiadinh.db";
+    Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,8 @@ public class ActivityMonKho extends AppCompatActivity {
     }
     public void AnhXa()
     {
+        db = new Database(this);
+        love = (Button) findViewById(R.id.btnLoveKho);
         tv = (TextView) findViewById(R.id.tvTieudeKho);
         image = (ImageView) findViewById(R.id.imChiTietKho);
         tv1 = (TextView) findViewById(R.id.tvChitietKho);
@@ -52,13 +60,29 @@ public class ActivityMonKho extends AppCompatActivity {
         Cursor cs = database.rawQuery("SELECT * FROM MonAn where id = "+(21+x),null);
         cs.moveToFirst();//de truyen vao du lieu, vi khi tao ra thi se khong co truyen vao bat cu
         //du lieu nao, nen phai moveto first
-        String tieude = cs.getString(1);
-        byte[] ima = cs.getBlob(2);
-        String chitiet = cs.getString(3);
+        final String tieude = cs.getString(1);
+        final byte[] ima = cs.getBlob(2);
+        final String chitiet = cs.getString(3);
         tv.setText(tieude);
         tv1.setText(chitiet);
         Bitmap bm = BitmapFactory.decodeByteArray(ima, 0, ima.length);
         image.setImageBitmap(bm);
+        love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean re = db.addData(tieude, ima, chitiet);
+                if(re == false)
+                {
+                    Toast.makeText(ActivityMonKho.this, "Thêm không thành công, vì đã có trong mục ưa thích", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(ActivityMonKho.this, "Đã thêm vào mục ưa thích", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
     }
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

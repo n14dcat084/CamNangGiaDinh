@@ -17,6 +17,12 @@ public class MeoVat {
         this.chitiet = chitiet;
     }
 
+    public MeoVat(String tieude, byte[] urlImage, String chitiet) {
+        this.tieude = tieude;
+        this.urlImage = urlImage;
+        this.chitiet = chitiet;
+    }
+
     public MeoVat(int id, String tieude, byte[] urlImage) {
         this.id = id;
         this.tieude = tieude;

@@ -19,19 +19,20 @@ import java.util.ArrayList;
 
 import DoiTuong.MeoVat;
 import btl.com.noitro.CheckConnection;
+import btl.com.noitro.Databases.Database;
 import btl.com.noitro.R;
 import btl.com.noitro.fodermeovatgiadinh.Activity_MeoVat;
-import btl.com.noitro.fodermeovatgiadinh.meovat;
-import btl.com.noitro.ultil.ArrLove;
 
 public class ActivityDayCon extends AppCompatActivity {
 
     public String DATABASE_NAME = "camnanggiadinh1.db";
 
-    ArrLove arrLove;
+
     TextView tv, tv1;
     ImageView im;
-    Button love;
+    Button btnLove;
+    Database db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +50,8 @@ public class ActivityDayCon extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.tvTieudeDC);
         im = (ImageView) findViewById(R.id.imChiTietDC);
         tv1 = (TextView) findViewById(R.id.tvChitietDC);
+        btnLove = (Button) findViewById(R.id.btnLoveDC);
+        db = new Database(this);
         //love = (Button) findViewById(R.id.btnLove);
 
         //sc = (ScrollView) findViewById(R.id.scroll);
@@ -57,26 +60,39 @@ public class ActivityDayCon extends AppCompatActivity {
     }
     public void Action()
     {
-        arrLove = new ArrLove();
-        final ArrayList<MeoVat> arr = new ArrayList<>();
+
+
         Intent intent = getIntent();
         String id = intent.getStringExtra("value");
-        int x = Integer.parseInt(id);
+        final int x = Integer.parseInt(id);
         SQLiteDatabase database = CheckConnection.initDatabase(this, DATABASE_NAME);
 
         Cursor cs = database.rawQuery("SELECT * FROM DayCon where id = "+(x+1),null);
         cs.moveToFirst();//de truyen vao du lieu, vi khi tao ra thi se khong co truyen vao bat cu
         //du lieu nao, nen phai moveto first
-        String tieude = cs.getString(1);
-
-        byte[] ima = cs.getBlob(3);
-        String chitiet = cs.getString(2);
+        final String tieude = cs.getString(1);
+        final byte[] ima = cs.getBlob(3);
+        final String chitiet = cs.getString(2);
         tv.setText(tieude);
         tv1.setText(chitiet);
         Bitmap bm = BitmapFactory.decodeByteArray(ima, 0, ima.length);
         im.setImageBitmap(bm);
-        MeoVat mv = new MeoVat(x, tieude,ima,chitiet );
-        arr.add(mv);
+        btnLove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean re = db.addData( tieude, ima, chitiet);
+                if(re == false)
+                {
+                    Toast.makeText(ActivityDayCon.this, "Them k thanh cong vi da co trong danh sach", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(ActivityDayCon.this, "Da them vao muc yeu thich", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
 
 
 

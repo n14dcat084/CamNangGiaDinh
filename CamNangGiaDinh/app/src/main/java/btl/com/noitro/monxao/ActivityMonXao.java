@@ -10,15 +10,22 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import btl.com.noitro.CheckConnection;
+import btl.com.noitro.Databases.Database;
 import btl.com.noitro.R;
 import btl.com.noitro.danhsachmon;
+import btl.com.noitro.monchien.Activity_MonChien;
 
 public class ActivityMonXao extends AppCompatActivity {
 
+    Database db;
+    Button love;
     TextView tv,tv1;
     ImageView im;
     final String DATABASE_NAME = "camnanggiadinh.db";
@@ -35,6 +42,8 @@ public class ActivityMonXao extends AppCompatActivity {
     }
     public void AnhXa()
     {
+        db = new Database(this);
+        love = (Button) findViewById(R.id.btnLoveXao);
         tv = (TextView) findViewById(R.id.tvTieudeXao);
         tv1 = (TextView) findViewById(R.id.tvChitietXao);
         im= (ImageView) findViewById(R.id.imChiTietXao);
@@ -49,13 +58,29 @@ public class ActivityMonXao extends AppCompatActivity {
         Cursor cs = database.rawQuery("SELECT * FROM MonAn where id = "+(x+51),null);
         cs.moveToFirst();//de truyen vao du lieu, vi khi tao ra thi se khong co truyen vao bat cu
         //du lieu nao, nen phai moveto first
-        String tieude = cs.getString(1);
-        byte[] ima = cs.getBlob(2);
-        String chitiet = cs.getString(3);
+        final String tieude = cs.getString(1);
+        final byte[] ima = cs.getBlob(2);
+        final String chitiet = cs.getString(3);
         tv.setText(tieude);
         tv1.setText(chitiet);
         Bitmap bm = BitmapFactory.decodeByteArray(ima, 0, ima.length);
         im.setImageBitmap(bm);
+        love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean re = db.addData(tieude, ima, chitiet);
+                if(re == false)
+                {
+                    Toast.makeText(ActivityMonXao.this, "Thêm không thành công, vì đã có trong mục ưa thích", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(ActivityMonXao.this, "Đã thêm vào mục ưa thích", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+        });
 
     }
     public boolean onOptionsItemSelected(MenuItem item) {

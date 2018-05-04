@@ -29,16 +29,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import DoiTuong.MeoVat;
+import btl.com.noitro.Databases.LoveMeoVat;
 import btl.com.noitro.foderdaycon.daycon;
 import btl.com.noitro.fodermeovatgiadinh.meovat;
 import btl.com.noitro.fodermonandochai.monandochai;
 
-import btl.com.noitro.adapter.*;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         love.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(MainActivity.this, LoveActivity.class);
+                Intent in = new Intent(MainActivity.this, LoveMeoVat.class);
                 startActivity(in);
             }
         });
@@ -111,6 +109,8 @@ public class MainActivity extends AppCompatActivity
                  txtdochai.setTypeface(font5);
         TextView txtdodaycon=(TextView)findViewById(R.id.txtdaycon);
                 txtdodaycon.setTypeface(font5);
+        TextView txt = (TextView) findViewById(R.id.textView);
+        txt.setTypeface(font5);
     }
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // if ((keyCode == KeyEvent.KEYCODE_BACK))
