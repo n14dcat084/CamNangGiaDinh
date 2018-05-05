@@ -92,7 +92,8 @@
         <activity android:name=".foderdaycon.ActivityDayCon" />
         <activity android:name=".Databases.LoveMeoVat" />
         <activity android:name=".Databases.ActivityLoveMeoVat" />
-        <activity android:name=".fodermonandochai.ActivityDocHai"></activity>
+        <activity android:name=".fodermonandochai.ActivityDocHai" />
+        <activity android:name=".adapter.xemvideo"></activity>
     </application>
 
 </manifest>

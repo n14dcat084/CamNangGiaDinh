@@ -18,6 +18,7 @@ import android.widget.Toast;
 import btl.com.noitro.CheckConnection;
 import btl.com.noitro.Databases.Database;
 import btl.com.noitro.R;
+import btl.com.noitro.adapter.xemvideo;
 import btl.com.noitro.danhsachmon;
 import btl.com.noitro.fodermeovatgiadinh.meovat;
 import btl.com.noitro.moncanh.Activity_MonCanh;
@@ -26,7 +27,7 @@ public class Activity_MonChien extends AppCompatActivity {
     public String DATABASE_NAME = "camnanggiadinh.db";
     TextView tv, tv1;
     ImageView im;
-    Button love;
+    Button love, video;
     Database db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +35,17 @@ public class Activity_MonChien extends AppCompatActivity {
         setContentView(R.layout.activity__mon_chien);
         AnhXa();
         Action();
+        video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Activity_MonChien.this, xemvideo.class));
+            }
+        });
     }
 
     public void AnhXa()
     {
+        video = (Button) findViewById(R.id.btnVideo);
         db = new Database(this);
         tv = (TextView) findViewById(R.id.tvTieudeChien);
         im = (ImageView) findViewById(R.id.imChiTietChien);
@@ -82,6 +90,7 @@ public class Activity_MonChien extends AppCompatActivity {
             });
 
         }
+
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
